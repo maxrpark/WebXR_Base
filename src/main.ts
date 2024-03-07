@@ -59,7 +59,7 @@ class WebARExperience {
   }
 
   loadModel() {
-    gltfLoader.load("/public/animated_bengal_cat/scene.gltf", (gltf: GLTF) => {
+    gltfLoader.load("/animated_bengal_cat/scene.gltf", (gltf: GLTF) => {
       this.gltfModel = gltf;
       this.initialize();
     });
