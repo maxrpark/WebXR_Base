@@ -19,10 +19,10 @@ body {
   bottom: 1vh;
   left: 50%;
   transform: translateX(-50%);
-  color: #3f3d56 !important;
+  /* color: #3f3d56 !important;
   background: #f9a826 !important;
   opacity: 1 !important;
-  left: 50% !important;
+  left: 50% !important; */
 }
 
 .app-intro {
