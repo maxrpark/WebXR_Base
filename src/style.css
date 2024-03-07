@@ -35,6 +35,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.hide {
+  display: none;
+}
 .nav {
   width: 100%;
   position: fixed;

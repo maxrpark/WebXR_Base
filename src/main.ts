@@ -138,6 +138,7 @@ class WebARExperience {
     this.hitTestSource = await session.requestHitTestSource({
       space: viewerReferenceSpace,
     });
+    document.querySelector(".app-intro")!.classList.add("hide");
     this.onUpdate();
   };
 
