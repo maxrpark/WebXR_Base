@@ -50,11 +50,12 @@ class WebARExperience {
   clock: THREE.Clock;
 
   constructor() {
+    this.container = document.getElementById("app")!;
     this.initialize();
     this.loadModel();
     this.clock = new THREE.Clock();
     this.models = [];
-    this.container = document.getElementById("app")!;
+
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera();
   }
