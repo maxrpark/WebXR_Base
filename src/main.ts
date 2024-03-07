@@ -50,6 +50,7 @@ class WebARExperience {
   clock: THREE.Clock;
 
   constructor() {
+    this.initialize();
     this.loadModel();
     this.clock = new THREE.Clock();
     this.models = [];
@@ -61,7 +62,6 @@ class WebARExperience {
   loadModel() {
     gltfLoader.load("/animated_bengal_cat/scene.gltf", (gltf: GLTF) => {
       this.gltfModel = gltf;
-      this.initialize();
     });
   }
 
@@ -71,11 +71,6 @@ class WebARExperience {
     this.environment();
     this.createReticle();
     this.createARButton();
-
-    this.renderer.xr.addEventListener("sessionstart", () => {
-      window.alert("clicked");
-      this.sessionStart();
-    });
   };
 
   environment() {
@@ -88,6 +83,11 @@ class WebARExperience {
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.xr.enabled = true;
+
+    this.renderer.xr.addEventListener("sessionstart", () => {
+      window.alert("clicked");
+      this.sessionStart();
+    });
 
     this.renderer.xr.addEventListener("sessionend", async () => {});
   }
@@ -129,19 +129,15 @@ class WebARExperience {
   }
 
   sessionStart = async () => {
-    window.alert("sessionstart");
     const session = this.renderer.xr.getSession();
     if (!session) return;
-    window.alert("session");
     const viewerReferenceSpace = await session.requestReferenceSpace("viewer");
 
     if (!session.requestHitTestSource) return;
 
-    window.alert("requestHitTestSource");
     this.hitTestSource = await session.requestHitTestSource({
       space: viewerReferenceSpace,
     });
-    window.alert("hitTestSource");
     this.onUpdate();
   };
 
