@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#ARButton {
+  position: fixed;
+  z-index: 1001;
+  padding: 1vh;
+  bottom: 1vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3f3d56 !important;
+  background: #f9a826 !important;
+  opacity: 1 !important;
+  left: 50% !important;
+}
+
+.app-intro {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #000000;
+}
+
+.svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 400px;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+}
