@@ -128,16 +128,19 @@ class WebARExperience {
   }
 
   sessionStart = async () => {
+    window.alert("sessionstart");
     const session = this.renderer.xr.getSession();
     if (!session) return;
-
+    window.alert("session");
     const viewerReferenceSpace = await session.requestReferenceSpace("viewer");
 
     if (!session.requestHitTestSource) return;
 
+    window.alert("requestHitTestSource");
     this.hitTestSource = await session.requestHitTestSource({
       space: viewerReferenceSpace,
     });
+    window.alert("hitTestSource");
     this.onUpdate();
   };
 
