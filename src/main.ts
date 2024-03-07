@@ -86,7 +86,6 @@ class WebARExperience {
     this.renderer.xr.enabled = true;
 
     this.renderer.xr.addEventListener("sessionstart", () => {
-      window.alert("clicked");
       this.sessionStart();
     });
 
