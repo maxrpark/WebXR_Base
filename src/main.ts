@@ -71,7 +71,6 @@ class WebARExperience {
     this.environment();
     this.createReticle();
     this.createARButton();
-    window.alert("all loaded");
   };
 
   environment() {
